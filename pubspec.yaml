@@ -21,6 +21,11 @@ dependencies:
   flutter_mobx: ^1.0.1
   mobx: ^1.0.1
   flutter_modular: ^0.4.2
+  auto_size_text:
+  flutter_staggered_grid_view:
+  expressions:
+  get_it:
+  rxdart:
   flutter:
     sdk: flutter
 
@@ -76,3 +81,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+scripts:
+  mobx: flutter pub run build_runner watch --delete-conflicting-outputs
