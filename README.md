@@ -26,6 +26,7 @@ samples, guidance on mobile development, and a full API reference.
 
 # Documentos para estudo
 - [Mobx](https://medium.com/flutterando/gerenciamento-de-estado-no-flutter-o-uso-do-mobx-a71c5dc3b6ca)
+- [Video Aulas Flutterando](https://youtu.be/kKNIaqZE8CY)
 
   
 
