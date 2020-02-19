@@ -1,5 +1,7 @@
 import 'package:expressions/expressions.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
+import 'package:project_scorpio/app/shared/repositories/localstorage/local_storage_interface.dart';
 import 'package:rxdart/rxdart.dart';
 
 part 'calculator_controller.g.dart';
@@ -7,8 +9,12 @@ part 'calculator_controller.g.dart';
 class CalculatorController = _CalculatorBase with _$CalculatorController;
 
 abstract class _CalculatorBase with Store {
+  final ILocalStorage _storage = Modular.get();
   @observable
   String cacheText = "";
+
+  @observable
+  String senha;
 
   @observable
   bool isResolved = false;
@@ -93,5 +99,29 @@ abstract class _CalculatorBase with Store {
       return false;
     }
     return double.tryParse(s) != null;
+  }
+
+  _HomeBase() {
+    init();
+  }
+
+  @action
+  init() async {
+    String stringLocal = await _storage.get('senha');
+    if (stringLocal == null) {
+      senha = '';
+    } else {
+      senha = stringLocal;
+    }
+  }
+
+  @action
+  void save() {
+    _storage.put('senha', cacheText);
+  }
+
+  @action
+  void remove() {
+    _storage.delete('senha');
   }
 }
