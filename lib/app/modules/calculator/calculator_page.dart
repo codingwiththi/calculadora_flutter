@@ -4,7 +4,6 @@ import 'package:project_scorpio/app/modules/calculator/calculator_module.dart';
 import 'package:project_scorpio/app/modules/calculator/components/button_click_widget.dart';
 import 'package:project_scorpio/app/modules/calculator/components/monitor_widget.dart';
 import 'package:project_scorpio/app/modules/calculator/services/button_text_service.dart';
-import 'package:project_scorpio/app/modules/home/home_module.dart';
 
 class CalculatorPage extends StatefulWidget {
   final String title;

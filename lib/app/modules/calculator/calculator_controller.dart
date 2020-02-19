@@ -13,7 +13,6 @@ abstract class _CalculatorBase with Store {
   @observable
   bool isResolved = false;
 
-  @computed
   final _typeExpression$ = BehaviorSubject<String>();
   @computed
   Sink<String> get typeExpressionIn => _typeExpression$.sink;

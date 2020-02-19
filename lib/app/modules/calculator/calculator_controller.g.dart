@@ -9,6 +9,19 @@ part of 'calculator_controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$CalculatorController on _CalculatorBase, Store {
+  Computed<Sink<String>> _$typeExpressionInComputed;
+
+  @override
+  Sink<String> get typeExpressionIn => (_$typeExpressionInComputed ??=
+          Computed<Sink<String>>(() => super.typeExpressionIn))
+      .value;
+  Computed<Stream<String>> _$typeExpressionOutComputed;
+
+  @override
+  Stream<String> get typeExpressionOut => (_$typeExpressionOutComputed ??=
+          Computed<Stream<String>>(() => super.typeExpressionOut))
+      .value;
+
   final _$cacheTextAtom = Atom(name: '_CalculatorBase.cacheText');
 
   @override
